@@ -1,0 +1,34 @@
+<div class="user_title">
+    <h2>Delete / Update User</h2>
+    <a href="/api/users">&larr; Back</a>
+</div> 
+  
+<section class="articles" style="display:flex; flex-direction:row;">
+    <div>
+      <h2 class="articles_heading" style="font-weight:400;">Delete User</h2>
+      <li><b>Name: </b><%= user.name %></li>
+      <li><b>ID: </b><%= user._id %></li>
+      <li><b>Email: </b><%= user.email %></li><br>
+          
+      <form action="/api/users/<%= user._id %>?_method=DELETE" method="POST">
+        <input type="submit" class="btn_delete" value="Delete">
+      </form> 
+    </div>
+  
+    <div style="margin-left:100px; width:300px"> 
+      <h2 class="articles_heading" style="font-weight:400;">Update User</h2>
+        <form action="/api/users/<%= user._id %>?_method=PUT" method="POST">
+  
+          <label for="name"><b>Name</b></label><br>
+          <input type="text" name="name" placeholder="Enter name" value="<%= user.name %>"><br>
+  
+          <label for="email"><b>Email</b></label><br>
+          <input type="email" name="email" placeholder="Enter email" value="<%= user.email %>"><br>
+  
+          <input type="submit" class="btn" value="Update">
+        </form><br>
+    </div>
+</section> 
+  
+  
+  

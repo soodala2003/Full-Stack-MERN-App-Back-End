@@ -1,0 +1,18 @@
+<div class="user_title">
+    <h2>Users</h2>
+    <a href="http://localhost:5000">+ Add New User</a>
+</div>
+  
+<ul class="user_lists">
+    <% users.forEach(user => { %>
+      <li>
+        <a href="/api/users/<%= user._id %>" style="display:flex; text-decoration:none;">
+          <%= user.name %> &nearr;
+        </a>
+        
+        <div class="user_lists_controls">
+          <a href="/api/users/<%= user._id %>" class="btn">View</a>
+        </div>
+      </li>
+    <% }) %>
+</ul>
