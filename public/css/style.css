@@ -21,7 +21,7 @@ body li {
 }
 
 .btn {
-    background-color: black;
+    background-color: rgb(112, 13, 116);
     border-radius: 10px;
     color: white;
     
@@ -51,8 +51,36 @@ textarea {
     width: 100%;
 }
 
+/* .header {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding-top: 10px;
+    grid-template-areas: 
+      "logo button"
+      "menu menu";
+} */
+
+@media only screen and (min-width: 768px) {
+    .header {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "menu";
+    }
+}
+
+/* a { color: var(--black); }
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+
+
+ */
 .header_nav {
     background-color: rgb(112, 13, 116);
+    /* display: flex;
+    justify-content: center;
+    grid-area: menu; */
 }
 
 .header_nav ul {
@@ -71,6 +99,11 @@ textarea {
     color: white;
     text-decoration: none;
 }
+
+/* .article_heading {
+    margin-top: 4rem;
+    font-weight: 400;
+} */
 
 .user_post {
     text-align: center;
@@ -102,27 +135,55 @@ textarea {
     color: white;
 }
 
-.user_title, .comment_title, .movie_title {
+.user_title, .source_title, .movie_title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.user_lists, .comment_lists, .movie_lists {
+/* .article_lists {
+    list-style-type: none;
     padding: 0;
     margin: 0;
+    font-size: clamp(1.13rem, cal(1.08rem + 0.22vw), 1.25rem);
+    display: flex;
+    flex-direction: column;
+} */
+
+.user_lists, .article_lists, .source_lists {
+    padding: 0;
+    margin: 0;
+
 }
 
 .user_lists li, 
-.comment_lists li,
-.movie_lists li {
+.article_lists li,
+.source_lists li {
     display: flex;
     justify-content: space-between;
     text-decoration: none;
 }
 
 .user_lists_controls .btn, 
-.comment_lists_controls .btn,
+.article_list_controls .btn,
+.source_lists_controls .btn,
 .movie_lists_controls .btn {
     display: inline-block;
+}
+
+.pagination {
+    font-size: 1.3rem;
+    color: var(--gray);
+    text-decoration: none;
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.pagination:hover {
+    color: var(--black);
+}
+
+.footer {
+    margin: 4rem;
+    text-align: center;
 }

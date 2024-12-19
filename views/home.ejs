@@ -1,0 +1,21 @@
+<section class="articles">
+  <h2 class="article_heading">Latest News Sources</h2>
+
+  <ul class="article_lists">
+    <% headlines.forEach(headline => { %>
+      <li>
+        <a href="#" style="display:flex; text-decoration:none;"> 
+          <%= headline.name %> &nearr;
+        </a>
+
+        <div class="article_list_controls">
+          <a href="/api/users/<%= headline.url %>" class="btn">View</a>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="#" class="pagination">&lt; View Older News</a>
+</section>
+
+  

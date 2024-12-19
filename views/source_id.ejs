@@ -1,0 +1,51 @@
+<div class="source_id_title" style="display: flex; flex-direction: column;">
+    <a style="display: flex; justify-content: end" href="/api/sources">&larr; Back</a>
+    <h2 style="font-style: italic;"><%= source.title %></h2> 
+</div> 
+  
+<section class="articles" style="display:flex; flex-direction:column;">
+  <div style="display:flex; flex-direction:row;">
+    <div> 
+      <img src="<%= source.urlToImage %>" alt="<%= source.title %>" width="300px"/>
+    </div>
+
+    <div style="margin-left:20px; width:500px">
+        <!-- <h2 class="articles_heading" style="font-weight:400;">Delete BBC News</h2> -->
+        <li><b>Author: </b> <%= source.author %></li>
+        <li><b>ID: </b> <%= source._id %></li>
+        <li><b>Description: </b> <%= source.description %></li>
+        <li><b>URL: </b> <%= source.url %></li>
+        <li><b>Published: </b> <%= source.publishedAt %></li>
+  
+        <form action="/api/sources/<%= source._id %>?_method=DELETE" method="POST">
+          <input type="submit" class="btn_delete" value="Delete">
+        </form> 
+    </div>
+    
+  </div>
+
+  <div> 
+    <h2 class="articles_heading" style="font-weight:400;">Update BBC News</h2>
+      <form action="/api/sources/<%= source._id %>?_method=PUT" method="POST">
+          <b>Author</b>
+          <input type="text" name="author" placeholder="Enter Author" value="<%= source.author %>"><br>
+      
+          <b>Title</b>
+          <input type="text" name="title" placeholder="Enter Title" value="<%= source.title %>"><br>
+      
+          <b>Description</b>
+          <textarea id="text" name="description" rows="2" cols="100" placeholder="Enter description"></textarea>
+
+          <b>URL</b>
+          <input type="text" name="url" placeholder="Enter URL" value="<%= source.url %>"><br>
+          <input type="submit" class="btn" value="Update">
+      </form>
+  </div>
+
+</section>
+  
+
+ 
+  
+  
+  

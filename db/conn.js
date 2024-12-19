@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 
 const connectionString = "mongodb+srv://soodala78:1972And78@mongopractice.g7ss4.mongodb.net/NewsAPI";
 
-//let db = conn.db("NewsAPI"); //SBA319
-
 const db = async () => {
   try {
     const conn = await mongoose.connect(connectionString);

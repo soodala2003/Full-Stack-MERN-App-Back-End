@@ -1,0 +1,18 @@
+<div class="source_title">
+    <h2>BBC News Title</h2>
+    <a href="http://localhost:5000/api/sources_post">+ Add New BBC News</a>
+</div>
+  
+<ul class="source_lists">
+    <% sources.forEach(source => { %>
+      <li>
+        <a href="/api/sources/<%= source._id %>" style="display:flex; text-decoration:none;">
+          <%= source.title %> &nearr;
+        </a>
+        
+        <div class="source_lists_controls">
+          <a href="/api/sources/<%= source._id %>" class="btn">View</a>
+        </div>
+      </li>
+    <% }) %>
+</ul>
