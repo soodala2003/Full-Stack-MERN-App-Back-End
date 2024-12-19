@@ -37,8 +37,8 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const source = req.body;
   
-  if (!source.author || !source.title) {
-    return res.status(400).json({ success: false, message: "Please provide fields of Author and Title." });
+  if (!source.author || !source.title || !source.description || !source.url) {
+    return res.status(400).json({ success: false, message: "Please provide fields of Author, Title, Description, and URL." });
   }
   
   const newSource = new Source(source);
