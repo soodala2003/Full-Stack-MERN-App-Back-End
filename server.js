@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import db from "./db/conn.js";
 import expressLayout from "express-ejs-layouts";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
 import Technology from "./models/Technology.js";
@@ -17,6 +18,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors()); 
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
