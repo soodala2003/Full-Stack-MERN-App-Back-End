@@ -16,9 +16,15 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const corsOptions ={
+  origin: "https://full-stack-mern-app-back-end.onrender.com",
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+};
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors()); 
+app.use(cors(corsOptions)); 
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
@@ -27,6 +33,8 @@ app.use(express.static("public"));
 app.use(expressLayout);
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
+
+
 
 app.get("/", async (req, res) => {
   const locals = {
