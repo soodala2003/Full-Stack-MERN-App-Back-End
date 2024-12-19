@@ -40,11 +40,11 @@ app.get("/", async (req, res) => {
   } 
 }); 
 
-app.get("/api/users/post", (req, res) => {
+app.get("/api/users/create", (req, res) => {
     res.render("user_post");
 });
 
-app.get("/api/sources/post", (req, res) => {
+app.get("/api/sources/create", (req, res) => {
     res.render("source_post");
 });
 
