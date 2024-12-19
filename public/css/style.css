@@ -9,7 +9,7 @@ body li {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 982px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -52,6 +52,7 @@ textarea {
 }
 
 /* .header {
+    background-color: rgb(112, 13, 116);
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
@@ -60,28 +61,39 @@ textarea {
     grid-template-areas: 
       "logo button"
       "menu menu";
-} */
+}  */
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     .header {
         grid-template-columns: auto 1fr auto;
-        grid-template-areas: "menu";
+        grid-template-areas: 
+        "logo menu button";
     }
+} */
+
+.header_logo {
+    grid-area: logo;
+    font-weight: 800;
+    font-size: 25px;
+    text-decoration: none;
 }
 
-/* a { color: var(--black); }
-h1 { font-size: var(--font-size-xl); }
-h2 { font-size: var(--font-size-lg); }
-h3 { font-size: var(--font-size-md); }
+.header_logo:hover {
+    text-decoration: underline;
+}
 
-
- */
 .header_nav {
+    /* grid-area: menu;  */
     background-color: rgb(112, 13, 116);
     /* display: flex;
-    justify-content: center;
-    grid-area: menu; */
+    justify-content: center; */
 }
+
+/* .header_button {
+    grid-area: button;
+    display: flex;
+    justify-content: end;
+} */
 
 .header_nav ul {
     list-style-type: none;
@@ -95,17 +107,12 @@ h3 { font-size: var(--font-size-md); }
     margin-right: 10px;
 }
 
-.header_nav a {
+.header_nav ul a {
     color: white;
     text-decoration: none;
 }
 
-/* .article_heading {
-    margin-top: 4rem;
-    font-weight: 400;
-} */
-
-.user_post {
+.user_post, .source_post {
     text-align: center;
     margin-top: 100px;
     display: flex; 
@@ -135,11 +142,12 @@ h3 { font-size: var(--font-size-md); }
     color: white;
 }
 
-.user_title, .source_title, .movie_title {
+.user_title, .source_title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 /* .article_lists {
     list-style-type: none;
@@ -166,9 +174,21 @@ h3 { font-size: var(--font-size-md); }
 
 .user_lists_controls .btn, 
 .article_list_controls .btn,
-.source_lists_controls .btn,
-.movie_lists_controls .btn {
+.source_lists_controls .btn {
     display: inline-block;
+}
+
+.source_img {
+    width: 300px;
+    border-radius: 8px;
+}
+
+.tech_img {
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .pagination {

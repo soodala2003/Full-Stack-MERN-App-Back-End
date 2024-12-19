@@ -1,18 +1,18 @@
 <section class="articles">
-  <h2 class="article_heading">Latest News Sources</h2>
+  <h2 class="article_heading">Latest Technology News</h2>
 
   <ul class="article_lists">
-    <% headlines.forEach(headline => { %>
+    <% technologies.forEach(technology => { %>
       <li>
-        <a href="#" style="display:flex; text-decoration:none;"> 
-          <%= headline.name %> &nearr;
+        <a href="api/technologies/<%= technology._id %>" style="display:flex; text-decoration:none;"> 
+          <%= technology.title %> &nearr;
+          <!-- <span class="article_list_controls"><%= technology.publishedAt%></span> -->
         </a>
-
         <div class="article_list_controls">
-          <a href="/api/users/<%= headline.url %>" class="btn">View</a>
+          <a href="api/technologies/<%= technology._id %>" class="btn">View</a>
         </div>
       </li>
-    <% }) %>
+    <% }) %> 
   </ul>
 
   <a href="#" class="pagination">&lt; View Older News</a>

@@ -1,0 +1,22 @@
+<div class="tech_title" style="display: flex; flex-direction: column;">
+    <a style="display: flex; justify-content: end" href="/">&larr; Back</a>
+    <h2 style="font-style: italic;"><%= technology.title %></h2> 
+</div> 
+  
+<section class="articles" style="display:flex; flex-direction:column;">
+  <div> <!-- style="display:flex; flex-direction:row;"> -->
+    <div style="align-items: center;"> 
+      <img src="<%= technology.urlToImage %>" alt="<%= technology.title %>" class="tech_img" />
+    </div>
+
+    <div style="margin-left:20px;">
+        <li><b>Author: </b> <%= technology.author %></li>
+        <li><b>ID: </b> <%= technology._id %></li>
+        <li><b>Description: </b> <%= technology.description %></li>
+        <li><b>URL: </b> 
+          <a href="<%= technology.url %>" target="_blank" ><%= technology.url %></a>
+        </li>
+        <li><b>Published: </b> <%= technology.publishedAt %></li>
+    </div>
+  </div>
+</section>

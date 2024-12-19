@@ -4,11 +4,11 @@ import db from "./db/conn.js";
 import expressLayout from "express-ejs-layouts";
 import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
-import Headline from "./models/Headline.js";
+import Technology from "./models/Technology.js";
 
-//import users from "./routes/user.route.js";
 import userRoutes from "./routes/user.route.js";
 import sourceRoutes from "./routes/source.route.js";
+import technologyRoutes from "./routes/technology.route.js";
 
 dotenv.config();
 
@@ -26,8 +26,6 @@ app.use(expressLayout);
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
-//app.use("/", newsRoutes);
-
 app.get("/", async (req, res) => {
   const locals = {
     title: "Full Stack MERN App Deployment",
@@ -35,22 +33,24 @@ app.get("/", async (req, res) => {
   };
 
   try {
-    const headlines = await Headline.find({});
-    res.render("home", { locals, headlines });
+    const technologies = await Technology.find({});
+    res.render("home", { locals, technologies });
   } catch (error) {
     console.log(error);
   } 
-  //res.send("Full Stact MERN App Deployment.");
-  //res.render("index", { locals }); 
 }); 
 
-app.get("/api/users_post", (req, res) => {
-  res.render("index");
+app.get("/api/users/post", (req, res) => {
+    res.render("user_post");
 });
 
-//app.use("/api/users", users);
+app.get("/api/sources/post", (req, res) => {
+    res.render("source_post");
+});
+
 app.use("/api/sources", sourceRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/technologies", technologyRoutes);
 //console.log(process.env.ATLAS_URI);
 
 app.listen(PORT, () => {
